@@ -1,21 +1,3 @@
-// function maxArea(height: number[]): number {
-//   let area: number = 0;
-
-//   for(let i = 0; i < height.length - 1; i++) {
-//     for(let j = height.length; j > i; j--) {
-//       if(height[i] > height[j] && area < (j - i) * height[j]) {
-//         area = (j - i) * height[j];
-//       }
-//       else if(height[i] <= height[j] && area < (j - i) * height[i]) {
-//         area = (j - i) * height[i];
-//       }
-//     }
-//   }
-
-//   return area;
-// };
-
-
 function maxArea(height: number[]): number {
   let leftSide: number = height[0];
   let leftIndex: number = 0, rightIndex: number = height.length - 1;

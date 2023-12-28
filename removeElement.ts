@@ -1,20 +1,16 @@
 function removeElement(nums: number[], val: number): number {
   let counter: number = 0;
-  nums.forEach((num, index) => {
-    if(num === val) {
+  for(let i = 0; i < nums.length; i++) {
+    if(nums[i] === val) {
       counter++;
-      nums[index] = null;
-      for(let j = index; j < nums.length - 1; j++) {
-        let temp = nums[j];
-        nums[j] = nums[j+1]
-        nums[j+1] = temp;
+      nums[i] = -0;
+      for(let j = nums.length - 1; j >= i; j--) {
+        if(nums[j] !== val) {
+          [ nums[i], nums[j] ] = [nums[j], nums[i]]
+        }
       }
-      console.log("index =", index);
-      console.log("nums =", nums);
-      
     }
-  })
-  console.log(nums);  
+  }    
   return counter;
 };
 

@@ -38,3 +38,18 @@ class MinStack {
 * var param_3 = obj.top()
 * var param_4 = obj.getMin()
 */
+
+const stack = new MinStack();
+
+stack.push(1);
+console.log(stack);
+stack.push(-20);
+console.log(stack);
+stack.push(32);
+console.log(stack);
+stack.push(-36);
+console.log(stack);
+
+stack.pop();
+console.log(stack);
+

@@ -1,19 +1,21 @@
 import ListNode from "./list-node";
 
 function removeElements(head: ListNode | null, val: number): ListNode | null {
-  console.log(head);
   
   let current = head;
   let previous;
-  while (current) {
-    if(current.val !== val) {
+  if(current?.val === val) {
+    head = current.next;
+  } else {
+    while (current?.next) {
       previous = current;
-      current = current?.next;
-    } else current = current.next?.next;
+      if(current?.next) current = current?.next;
+    }
+    previous.next = current?.next;
   }
-  console.log("list = ", previous);
+  console.log("list = ", JSON.stringify(head));
   
-  return previous;
+  return head;
 }
 
 console.log(
